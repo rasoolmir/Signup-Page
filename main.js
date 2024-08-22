@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+  //create element 
   const root = document.getElementById('root');
-  // creat element
-  const signupContainer = document.createElement('div');
-  signupContainer.className = 'signup';
+  const signup = document.createElement('div');
+  signup.className = 'signup';
   const signupImage = document.createElement('div');
   signupImage.className = 'signup--image';
   const img = document.createElement('img');
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
       email,
       password
     };
-    
-    // add api
+     
+    //api link
     fetch('https://dummyjson.com/users/add', { 
       method: 'POST',
       headers: {
@@ -75,9 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error:', error);
     });
   });
+
   
   signupForm.appendChild(form);
-  signupContainer.appendChild(signupImage);
-  signupContainer.appendChild(signupForm);
-  root.appendChild(signupContainer);
+  signup.appendChild(signupImage);
+  signup.appendChild(signupForm);
+  root.appendChild(signup);
 });
